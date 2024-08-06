@@ -1,5 +1,5 @@
 import requests
-import secrets
+import passwords
 import json
 import re
 import os
@@ -8,7 +8,7 @@ import mdParser
 ftcCourseId = "3947~292126"
 
 def load(path: str, *params: str) -> json:
-    url = "https://canvas.instructure.com/api/v1/{}?access_token={}".format(path, secrets.token)
+    url = "https://canvas.instructure.com/api/v1/{}?access_token={}".format(path, passwords.token)
     for param in params:
         url += "&&" + param
     print(url)
